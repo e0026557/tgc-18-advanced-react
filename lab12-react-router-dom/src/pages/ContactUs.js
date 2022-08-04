@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // A hook is a function provided by React or third-party packages
 // - useNavigate creates a function which we can use to change 'pages'
