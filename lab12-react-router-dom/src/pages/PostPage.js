@@ -15,6 +15,7 @@ export default function PostPage(props) {
 				const response = await axios.get(
 					'https://jsonplaceholder.typicode.com/posts/' + postId
 				);
+				// Set post variable to response
 				setPost(response.data);
 			}
 		};
