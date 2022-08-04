@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddProduct from './AddProductForm';
 import ProductContext from './ProductContext';
 import ProductListing from './ProductListing';
 
@@ -25,7 +26,22 @@ function App() {
 	const context = {
 		// function to get all the products (make sure it is an arrow function)
 		getProducts: () => {
+      // use axios to get all products
+
 			return products; // products from the state variable
+		},
+		addProduct: (productName, cost) => {
+			const cloned = [
+				...products,
+				{
+					id: Math.floor(Math.random() * 10000) + 10000,
+					product_name: productName,
+					cost: cost
+				}
+			];
+
+			setProducts(cloned);
+      // todo: axios to add new product via api endpoint
 		}
 	};
 
@@ -36,6 +52,7 @@ function App() {
 				<h1>My Catalog</h1>
 				{/* Since ProductListing is a descendant of ProductContext, it can use the context */}
 				<ProductListing />
+				<AddProduct />
 			</ProductContext.Provider>
 		</React.Fragment>
 	);
