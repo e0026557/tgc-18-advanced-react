@@ -60,6 +60,7 @@ export default function AddStudent() {
 				/>
 				<label>Yes</label>
 
+				{/* NOTE: All inputs will be in string even though we try to force it to be boolean in the case of radio buttons etc */}
 				<input
 					type='radio'
 					name='graduated'

@@ -23,7 +23,11 @@ export default function StudentList() {
 								<td>{student.id}</td>
 								<td>{student.year}</td>
 								<td>{student.gender}</td>
-								<td>{student.graduated}</td>
+								<td>
+									{student.graduated === 'true'
+										? 'Yes'
+										: 'No'}
+								</td>
 								<td>
 									<button
 										onClick={() =>

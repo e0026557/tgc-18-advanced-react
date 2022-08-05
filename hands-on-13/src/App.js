@@ -4,6 +4,8 @@ import StudentContext from './StudentContext';
 import StudentList from './StudentList';
 
 function App() {
+	// The first arg of useState is the default value for the students state variable
+	// -> setStudents functions are ASYNC (need to await if doing a few that depends on the completion of another)
 	const [students, setStudents] = useState([
 		{
 			id: Math.floor(Math.random() * 10000),
@@ -25,10 +27,15 @@ function App() {
 		}
 	]);
 
+	// Also known as the controller (domain/model) -> state management
+	// Note: make sure to use arrow functions
 	const studentContext = {
 		getStudents: () => {
 			return students;
 		},
+
+		// if doing mongo or mysql, MUST use the restful API to add the new student to the database then the response of the API must include the new ID
+
 		addStudent: (year, gender, graduated) => {
 			setStudents([
 				...students,
