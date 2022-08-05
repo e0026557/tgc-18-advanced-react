@@ -30,10 +30,13 @@ export default function ProductProvider(props) {
       return products; // products from the state variable
     },
     addProduct: (newProduct) => {
-      const cloned = [
+      setProducts([
         ...products,
         newProduct
-      ];
+      ]);
+    },
+    getProductById: (productId) => {
+      return products.find( product => product.id === productId );
     }
   };
 
