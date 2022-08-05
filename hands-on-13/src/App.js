@@ -48,6 +48,14 @@ function App() {
 			]);
 		},
 		deleteStudent: (id) => {
+			// Alternative method:
+			// const indexToDelete = students.findIndex( student => student.id === id );
+			// const clone = [
+			// 	...students.slice(0, indexToDelete),
+			// 	...students.slice(indexToDelete + 1)
+			// ];
+			// setStudents(clone);
+
 			setStudents(students.filter((student) => student.id !== id));
 		}
 	};
